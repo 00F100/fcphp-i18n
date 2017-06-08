@@ -1,0 +1,28 @@
+{
+    "name": "00f100/fcphp-i18n",
+    "type": "package",
+    "version": "0.1.0",
+    "description": "Internationalization i18n",
+    "keywords": ["nternationalization", "i18n", "fcphp"],
+    "homepage": "https://github.com/00f100/fcphp-i18n",
+    "authors": [
+        {
+            "name": "João Moraes",
+            "email": "joaomoraesbr@gmail.com",
+            "homepage": "https://github.com/00f100"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "00f100/phpdbug": "*",
+        "phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "FcPhp\\I18n\\": "src/",
+            "FcPhp\\I18n\\Test\\": "tests/"
+        }
+    }
+}
