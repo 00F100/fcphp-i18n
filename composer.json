@@ -30,6 +30,6 @@
     "scripts": {
         "post-install-cmd": "FcPhp\\Register\\Register::install",
         "post-update-cmd": "FcPhp\\Register\\Register::update",
-        "post-package-install": "FcPhp\\Register\\Register::update"
+        "post-package-install": "FcPhp\\Register\\Register::updatePackage"
     }
 }
