@@ -30,11 +30,5 @@
     "scripts": {
         "post-install-cmd": "FcPhp\\Register\\Register::install",
         "post-update-cmd": "FcPhp\\Register\\Register::update"
-    },
-    "repositories":[
-        {
-            "type":"vcs",
-            "url":"git@github.com:00F100/fcphp-register.git"
-        }
-    ]
+    }
 }
