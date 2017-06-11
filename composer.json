@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "00f100/fcphp-register": "dev-master"
     },
     "require-dev": {
         "00f100/phpdbug": "*",
@@ -25,5 +26,15 @@
             "FcPhp\\I18n\\": "src/",
             "FcPhp\\I18n\\Test\\": "tests/"
         }
-    }
+    },
+    "scripts": {
+        "post-install-cmd": "FcPhp\\Register\\Register::install",
+        "post-update-cmd": "FcPhp\\Register\\Register::update"
+    },
+    "repositories":[
+        {
+            "type":"vcs",
+            "url":"git@github.com:00F100/fcphp-register.git"
+        }
+    ]
 }
