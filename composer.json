@@ -13,8 +13,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
-        "00f100/fcphp-register": "dev-master"
+        "php": ">=7.0"
     },
     "require-dev": {
         "00f100/phpdbug": "*",
@@ -26,10 +25,5 @@
             "FcPhp\\I18n\\": "src/",
             "FcPhp\\I18n\\Test\\": "tests/"
         }
-    },
-    "scripts": {
-        "post-install-cmd": "FcPhp\\Register\\Register::install",
-        "post-update-cmd": "FcPhp\\Register\\Register::update",
-        "post-package-install": "FcPhp\\Register\\Register::updatePackage"
     }
 }
