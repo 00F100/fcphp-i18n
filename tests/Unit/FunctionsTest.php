@@ -7,18 +7,10 @@
 namespace FcPhp\I18n\Test\Unit
 {
 	use PHPUnit\Framework\TestCase;
-	use FcPhp\I18n\I18n;
-	use FcPhp\I18n\Interfaces\II18n;
 
-	class I18nTest extends TestCase
+	class FunctionsTest extends TestCase
 	{
-		public function testGetInstance()
-		{
-			$instance = I18n::getInstance();
-			$this->assertTrue($instance instanceof II18n);
-		}
-
-		public function testConfigureLanguage()
+		public function testConfigureLanguageDefault()
 		{
 			$default = 'pt-br';
 			$translate = [
@@ -32,19 +24,17 @@ namespace FcPhp\I18n\Test\Unit
 					'My name is %s' => 'Mi nombre és %s',
 				],
 			];
-			$instance = I18n::getInstance();
-			$instance->configure($default, $translate);
+			__i18n_configure($default, $translate);
 			$name = 'João';
 			$text = 'My name is %s';
-			$output = $instance->translate($text, $name);
+			$output = __($text, $name);
 			$this->assertEquals($output, sprintf('Meu nome é %s', $name));
 		}
 		
 		public function testTranslateSimpleText()
 		{
 			$text = 'Example string';
-			$instance = I18n::getInstance();
-			$output = $instance->translate($text);
+			$output = __($text);
 			$this->assertEquals($text, $output);
 		}
 
@@ -52,9 +42,8 @@ namespace FcPhp\I18n\Test\Unit
 		{
 			$name = 'John';
 			$text = 'My name is %s';
-			$instance = I18n::getInstance();
-			$instance->lang('en');
-			$output = $instance->translate($text, $name);
+			__i18n_lang('en');
+			$output = __($text, $name);
 			$this->assertEquals(sprintf($text, $name), $output);
 		}
 
@@ -72,12 +61,11 @@ namespace FcPhp\I18n\Test\Unit
 					'My name is %s' => 'Mi nombre és %s',
 				],
 			];
-			$instance = I18n::getInstance();
-			$instance->configure($default, $translate);
-			$instance->lang('es');
+			__i18n_configure($default, $translate);
+			__i18n_lang('es');
 			$name = 'Juan';
 			$text = 'My name is %s';
-			$output = $instance->translate($text, $name);
+			$output = __($text, $name);
 			$this->assertEquals($output, sprintf('Mi nombre és %s', $name));
 		}
 	}

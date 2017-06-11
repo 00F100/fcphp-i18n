@@ -20,6 +20,7 @@
         "phpunit/phpunit": "6.*"
     },
     "autoload": {
+        "files": ["src/functions.php"],
         "psr-4": {
             "FcPhp\\I18n\\": "src/",
             "FcPhp\\I18n\\Test\\": "tests/"
