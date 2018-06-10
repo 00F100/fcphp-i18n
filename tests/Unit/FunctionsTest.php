@@ -27,7 +27,7 @@ namespace FcPhp\I18n\Test\Unit
 			__i18n_configure($default, $translate);
 			$name = 'João';
 			$text = 'My name is %s';
-			$output = __($text, $name);
+			$output = _i18n_translate($text, $name);
 			$this->assertEquals($output, sprintf('Meu nome é %s', $name));
 		}
 		

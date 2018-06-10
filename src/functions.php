@@ -8,10 +8,24 @@ use FcPhp\I18n\I18n;
  * @param string $string String to translate
  * @return string
  */
-function __($string)
+function _i18n_translate($string)
 {
 	$instance = I18n::getInstance();
 	return call_user_func_array([$instance, 'translate'], func_get_args());
+}
+
+/**
+ * Function to translate any string and populate dynamic values
+ *
+ * @param string $string String to translate
+ * @return string
+ */
+if(!function_exists('__')) {
+	function __($string)
+	{
+		$instance = I18n::getInstance();
+		return call_user_func_array([$instance, 'translate'], func_get_args());
+	}
 }
 
 /**
