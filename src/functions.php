@@ -10,8 +10,8 @@ use FcPhp\I18n\I18n;
  */
 function _i18n_translate($string)
 {
-	$instance = I18n::getInstance();
-	return call_user_func_array([$instance, 'translate'], func_get_args());
+    $instance = I18n::getInstance();
+    return call_user_func_array([$instance, 'translate'], func_get_args());
 }
 
 /**
@@ -21,11 +21,11 @@ function _i18n_translate($string)
  * @return string
  */
 if(!function_exists('__')) {
-	function __($string)
-	{
-		$instance = I18n::getInstance();
-		return call_user_func_array([$instance, 'translate'], func_get_args());
-	}
+    function __($string)
+    {
+        $instance = I18n::getInstance();
+        return call_user_func_array([$instance, 'translate'], func_get_args());
+    }
 }
 
 /**
@@ -37,8 +37,8 @@ if(!function_exists('__')) {
  */
 function __i18n_configure($language, array $configuration)
 {
-	$instance = I18n::getInstance();
-	return $instance->configure($language, $configuration);
+    $instance = I18n::getInstance();
+    return $instance->configure($language, $configuration);
 }
 
 /**
@@ -49,6 +49,6 @@ function __i18n_configure($language, array $configuration)
  */
 function __i18n_lang($language)
 {
-	$instance = I18n::getInstance();
-	return $instance->lang($language);
+    $instance = I18n::getInstance();
+    return $instance->lang($language);
 }
